@@ -1,0 +1,14 @@
+{
+  "name": "terra-dourada-brasilia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page de reservas diretas da Terra Dourada Brasília (Casa Rosa e Chalé Terra Dourada).",
+  "type": "module",
+  "scripts": {
+    "fotos": "node scripts/baixar-fotos.mjs",
+    "dev": "npx --yes serve ."
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
