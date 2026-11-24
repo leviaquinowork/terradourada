@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Terra Dourada Brasília","description":"Chácara de 20.000 m² no Lago Oeste com duas hospedagens independentes: Casa Rosa (até 12 hóspedes) e Chalé Terra Dourada (até 7 hóspedes).","address":{"@type":"PostalAddress","addressLocality":"Brasília","addressRegion":"DF","addressCountry":"BR"},"checkinTime":"15:00","checkoutTime":"11:00","sameAs":["https://www.instagram.com/terradouradabrasilia/"]}
+{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Terra Dourada Brasília","description":"Chácara de 20.000 m² no Lago Oeste com duas hospedagens: Casa Rosa (até 12 hóspedes) e Chalé Terra Dourada (até 7 hóspedes).","address":{"@type":"PostalAddress","addressLocality":"Brasília","addressRegion":"DF","addressCountry":"BR"},"checkinTime":"15:00","checkoutTime":"11:00","sameAs":["https://www.instagram.com/terradouradabrasilia/"]}
 </script>
 <script>
 /* Fotos que não carregarem viram moldura com o nome da hospedagem (registrado antes das imagens) */
@@ -111,10 +111,10 @@ p{margin:0}
 .hero-bg svg,.hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero-bg img{animation:kb 14s ease-out both;filter:saturate(1.06) contrast(1.04)}
 @keyframes kb{from{transform:scale(1.05)}to{transform:scale(1)}}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,12,.32) 0%,rgba(20,18,12,0) 16%,rgba(20,18,12,0) 48%,rgba(20,18,12,.62) 100%)}
-@media(min-width:961px){.hero::after{background:linear-gradient(180deg,rgba(20,18,12,.3) 0%,rgba(20,18,12,0) 16%),linear-gradient(90deg,rgba(20,18,12,.55) 0%,rgba(20,18,12,.18) 45%,rgba(20,18,12,0) 70%)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,13,9,.55) 0%,rgba(14,13,9,.08) 14%,rgba(14,13,9,.12) 22%,rgba(14,13,9,.62) 38%,rgba(14,13,9,.86) 60%,rgba(14,13,9,.93) 100%)}
+@media(min-width:961px){.hero::after{background:linear-gradient(180deg,rgba(14,13,9,.6) 0%,rgba(14,13,9,0) 16%),linear-gradient(90deg,rgba(14,13,9,.86) 0%,rgba(14,13,9,.66) 32%,rgba(14,13,9,.22) 58%,rgba(14,13,9,0) 74%)}}
 .hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:clamp(96px,12vh,132px);padding-top:120px}
-.hero h1{font-size:clamp(44px,7.6vw,96px);font-weight:400;max-width:11ch;line-height:1;letter-spacing:-.02em;text-shadow:0 2px 30px rgba(0,0,0,.28)}
+.hero h1{font-size:clamp(44px,7.6vw,96px);font-weight:400;max-width:11ch;line-height:1;letter-spacing:-.02em;text-shadow:0 2px 6px rgba(0,0,0,.25),0 4px 40px rgba(0,0,0,.35)}
 .hero h1 .w{display:inline-block;opacity:0;transform:translateY(.45em);animation:up 1.1s var(--ease) forwards}
 @keyframes up{to{opacity:1;transform:none}}
 .hero p{font-size:clamp(16px,1.6vw,19px);max-width:44ch;margin-top:22px;color:#fff;text-shadow:0 1px 14px rgba(0,0,0,.35);opacity:0;animation:up 1s .7s var(--ease) forwards}
@@ -165,9 +165,6 @@ p{margin:0}
 .card .acts .btn{padding:0 14px}
 .card .acts .btn.ghost{color:var(--forest)}
 @media(max-width:420px){.card .acts{grid-template-columns:1fr}}
-.together{margin-top:28px;display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;padding:22px 26px;border-radius:var(--r);border:1px dashed var(--gold);background:rgba(216,189,134,.12)}
-.together p{max-width:62ch}
-.together b{font-family:var(--serif);font-size:22px;font-weight:400;display:block}
 
 /* Experiência */
 .exp{background:var(--forest);color:#f3eee3}
@@ -333,7 +330,7 @@ p{margin:0}
 .sheet h3{font-size:32px}
 .sheet .x{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:none;cursor:pointer;flex:none;font-size:22px;line-height:1;color:var(--ink)}
 .sheet p.sub{color:var(--mute);font-size:15px;margin-top:8px}
-.choice{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:22px}
+.choice{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:22px}
 .choice label{position:relative;cursor:pointer}
 .choice input{position:absolute;opacity:0}
 .choice span{display:flex;flex-direction:column;justify-content:center;min-height:64px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);font-size:14px;font-weight:600;line-height:1.25;transition:.25s}
@@ -437,7 +434,7 @@ p{margin:0}
  <div class="wrap">
   <div class="rv"><b>20.000 m²</b><span>de chácara com mata nativa, pomar e jardins</span></div>
   <div class="rv d1"><b>2 casas</b><span>independentes, a cerca de 500 m uma da outra</span></div>
-  <div class="rv d2"><b>Até 19</b><span>hóspedes reservando as duas juntas</span></div>
+  <div class="rv d2"><b>30 min</b><span>do centro de Brasília, no Lago Oeste</span></div>
   <div class="rv d3"><b>Superhost</b><span>anfitriã Aline e equipe, no Airbnb</span></div>
  </div>
 </div>
@@ -447,12 +444,8 @@ p{margin:0}
  <div class="wrap">
   <div class="kick rv">Conheça nossas hospedagens</div>
   <h2 class="rv">Duas casas, dois jeitos de desacelerar.</h2>
-  <p class="lead rv">Na mesma chácara, cada uma com sua entrada, sua piscina natural e sua vista. Escolha a que combina com a sua viagem, ou reserve as duas.</p>
+  <p class="lead rv">Na mesma chácara, cada uma com sua piscina natural, sua vista e seu jeito de receber. Escolha a que combina com a sua viagem.</p>
   <div class="stays" id="stays"></div>
-  <div class="together rv">
-   <p><b>Vem com um grupo grande?</b>A Casa Rosa e o Chalé podem ser reservados juntos: até 12 + 7 hóspedes, cada grupo com a sua casa.</p>
-   <button class="btn sm" type="button" data-book="ambas">Consultar as duas casas</button>
-  </div>
  </div>
 </section>
 
@@ -519,7 +512,7 @@ p{margin:0}
   <div class="kick rv">Como funciona a reserva</div>
   <h2 class="rv">Simples, do começo ao fim.</h2>
   <div class="steps">
-   <div class="step rv"><b>Escolha sua hospedagem</b><span>Casa Rosa, Chalé Terra Dourada ou as duas juntas.</span></div>
+   <div class="step rv"><b>Escolha sua hospedagem</b><span>Casa Rosa ou Chalé Terra Dourada.</span></div>
    <div class="step rv d1"><b>Consulte pelo WhatsApp</b><span>Suas datas e o número de hóspedes já seguem na mensagem.</span></div>
    <div class="step rv d2"><b>Receba as condições</b><span>Valores, pagamento e informações da estadia, tudo por escrito.</span></div>
    <div class="step rv d3"><b>Confirme com a equipe</b><span>Reserva fechada diretamente com a Terra Dourada.</span></div>
@@ -636,7 +629,6 @@ p{margin:0}
    <div class="choice">
     <label><input type="radio" name="casa" value="casa-rosa" checked><span>Casa Rosa<small>até 12</small></span></label>
     <label><input type="radio" name="casa" value="chale-terra-dourada"><span>Chalé<small>até 7</small></span></label>
-    <label><input type="radio" name="casa" value="ambas"><span>As duas<small>até 19</small></span></label>
    </div>
   </fieldset>
   <div class="fields">
@@ -701,7 +693,7 @@ const FAQ = [
  ['Como funciona a reserva direta?','<p>Você escolhe a hospedagem, envia suas datas pelo WhatsApp e recebe da equipe os valores, as formas de pagamento e as informações da estadia. Com tudo combinado, a reserva é confirmada diretamente com a Terra Dourada.</p>'],
  ['Como consultar a disponibilidade?','<p>Toque em <b>Consultar disponibilidade</b>, escolha a casa, as datas e o número de hóspedes. A mensagem já chega pronta no WhatsApp; é só enviar.</p>'],
  ['Quais são as formas de pagamento?','<p>As formas e condições de pagamento são informadas pela equipe no atendimento, junto com o valor da sua estadia.</p>'], // [CONFIRMAR] listar formas aceitas (Pix, cartão, parcelamento, sinal)
- ['Qual é a capacidade de hóspedes?','<p><b>Casa Rosa:</b> até 12 hóspedes, em 4 quartos, 7 camas e 4 banheiros.</p><p><b>Chalé Terra Dourada:</b> até 7 hóspedes, em 2 quartos, 5 camas (incluindo sofá-cama) e 2 banheiros.</p><p>Reservando as duas casas, o grupo pode chegar a 19 pessoas.</p>'],
+ ['Qual é a capacidade de hóspedes?','<p><b>Casa Rosa:</b> até 12 hóspedes, em 4 quartos, 7 camas e 4 banheiros.</p><p><b>Chalé Terra Dourada:</b> até 7 hóspedes, em 2 quartos, 5 camas (incluindo sofá-cama) e 2 banheiros.</p>'],
  ['Quais são os horários de check-in e check-out?','<p>Check-in das <b>15h às 18h</b> e check-out <b>até as 11h</b>, nas duas hospedagens.</p>'],
  ['A hospedagem aceita animais?','<p><b>Chalé Terra Dourada:</b> aceita pets de pequeno e médio porte, com aviso no momento da reserva e taxa adicional.</p><p><b>Casa Rosa:</b> consulte a equipe pelo WhatsApp.</p><p>Os cães da chácara ficam no canil durante as estadias.</p>'], // [CONFIRMAR] política de pets da Casa Rosa
  ['Como funciona o cancelamento?','<p>As regras de cancelamento das reservas diretas são enviadas junto com as condições da estadia, antes da confirmação.</p>'], // [CONFIRMAR] política de cancelamento
@@ -714,7 +706,7 @@ const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAl
 const mq = matchMedia('(max-width:960px)'), still = matchMedia('(prefers-reduced-motion: reduce)');
 
 /* ---------- WhatsApp ---------- */
-const nomeDe = k => k==='ambas' ? 'das duas hospedagens (Casa Rosa e Chalé Terra Dourada)' : (k==='casa-rosa' ? 'da Casa Rosa' : 'do Chalé Terra Dourada');
+const nomeDe = k => k==='casa-rosa' ? 'da Casa Rosa' : 'do Chalé Terra Dourada';
 const MSG = {
  geral:'Olá! Conheci a Terra Dourada pelo site e gostaria de mais informações sobre as hospedagens.',
  semdata:'Olá! Conheci a Terra Dourada pelo site e gostaria de ajuda para escolher datas e hospedagem.',
@@ -862,7 +854,7 @@ const iso=d=>new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice
 const today=new Date(); today.setHours(0,0,0,0);
 dIn.min=iso(today);
 const br=s=>s.split('-').reverse().join('/');
-const casaSel=()=>form.casa.value, capOf=k=>k==='ambas'?19:STAYS[k].cap;
+const casaSel=()=>form.casa.value, capOf=k=>STAYS[k].cap;
 function noites(){ if(!dIn.value||!dOut.value) return 0; return Math.round((new Date(dOut.value)-new Date(dIn.value))/864e5); }
 function problema(){
  if(!dIn.value) return 'Escolha a data de entrada.';
@@ -880,9 +872,9 @@ function upd(){
  gOut.textContent=guests; $('#gMinus').disabled=guests<=1; $('#gPlus').disabled=guests>=cap;
  if(dIn.value){ const m=new Date(dIn.value+'T00:00'); m.setDate(m.getDate()+1); dOut.min=iso(m); }
  const n=noites();
- $('#sum').textContent = n>0 ? `${nomeDe(casaSel()).replace(/^d[ao]s? /,'')} · ${n} ${n>1?'noites':'noite'} · ${guests} ${guests>1?'hóspedes':'hóspede'} (máx. ${cap})` : `Capacidade: até ${cap} hóspedes`;
+ $('#sum').textContent = n>0 ? `${nomeDe(casaSel()).replace(/^d[ao] /,'')} · ${n} ${n>1?'noites':'noite'} · ${guests} ${guests>1?'hóspedes':'hóspede'} (máx. ${cap})` : `Capacidade: até ${cap} hóspedes`;
  send.href = problema() ? '#' : wa(msgReserva());
- $('#sendNoDate').href = wa(casaSel()==='ambas' ? 'Olá! Conheci a Terra Dourada pelo site e gostaria de consultar a disponibilidade das duas hospedagens (Casa Rosa e Chalé Terra Dourada).' : MSG[casaSel()]);
+ $('#sendNoDate').href = wa(MSG[casaSel()]);
  $('#err').textContent='';
 }
 $('#gMinus').onclick=()=>{guests--;upd()}; $('#gPlus').onclick=()=>{guests++;upd()};
@@ -891,7 +883,7 @@ form.addEventListener('submit',e=>e.preventDefault());
 send.addEventListener('click',e=>{ const p=problema(); if(p){ e.preventDefault(); $('#err').textContent=p; (dIn.value?dOut:dIn).focus(); return; } track('whatsapp_click',{origem:'consulta',hospedagem:casaSel(),hospedes:guests,noites:noites()}); });
 $('#sendNoDate').addEventListener('click',()=>track('whatsapp_click',{origem:'consulta_sem_data',hospedagem:casaSel()}));
 function openBook(k){
- const v=(k&&(STAYS[k]||k==='ambas'))?k:null;
+ const v=(k&&STAYS[k])?k:null;
  if(v) form.querySelector(`input[value="${v}"]`).checked=true;
  closeSheet($('#det')); upd(); openSheet($('#book'));
  track('abrir_consulta',{hospedagem:v||'nao_definida'});
