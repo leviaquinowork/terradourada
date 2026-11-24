@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Painel · Terra Dourada</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--sand:#f4efe6;--sand2:#ebe2d2;--paper:#fbf8f2;--ink:#27231d;--mute:#6d6458;--line:#ddd2bf;--forest:#2f3a26;--gold:#b8955a;--rose:#b07d72;--rose2:#ecd9d2;--moss:#55623f;--moss2:#dfe3d2;--serif:Gloock,Georgia,serif;--sans:"Instrument Sans",system-ui,sans-serif}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--sand);color:var(--ink);font:16px/1.55 var(--sans)}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:28px max(5vw,16px) 64px}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:34px;height:34px}.logo b{font:400 22px/1 var(--serif);display:block}.logo small{font-size:12px;opacity:.75}
+h1{font:400 clamp(32px,5vw,44px)/1.06 var(--serif);margin:34px 0 6px}
+h2{font:400 26px/1.1 var(--serif);margin:0}
+.mute{color:var(--mute);font-size:15px;margin:4px 0 0}
+.panel{background:var(--paper);border-radius:22px;padding:clamp(20px,4vw,32px);margin-top:26px;box-shadow:0 24px 50px -40px rgba(47,58,38,.5)}
+.grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr) auto;gap:12px;align-items:end;margin-top:18px}
+@media(max-width:760px){.grid{grid-template-columns:minmax(0,1fr)}}
+label.f{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--mute)}
+input,select{width:100%;min-height:48px;border-radius:12px;border:1px solid var(--line);background:#fff;padding:0 14px;font:500 16px var(--sans);color:var(--ink)}
+input:focus,select:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px rgba(79,90,58,.15)}
+.casas{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.casas label{position:relative;cursor:pointer}
+.casas input{position:absolute;opacity:0;width:1px;height:1px}
+.casas span{display:inline-flex;min-height:44px;align-items:center;padding:0 18px;border-radius:999px;border:1px solid var(--line);font-weight:600;font-size:15px}
+.casas input:checked+span{background:var(--forest);border-color:var(--forest);color:#fff}
+.casas input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;border-radius:999px;border:1px solid transparent;background:var(--forest);color:#fff;font:600 15px var(--sans);text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn:disabled{opacity:.55;cursor:default}
+.btn.ghost{background:transparent;color:var(--forest);border-color:var(--line)}
+.btn.wa{background:#1f7a4d}
+.btn.red{background:#9b3a2b}
+.btn.sm{min-height:40px;padding:0 14px;font-size:14px}
+.btn svg{width:17px;height:17px}
+.out{margin-top:20px;padding:18px;border-radius:16px;background:var(--sand)}
+.out code{display:block;word-break:break-all;background:#fff;border-radius:10px;padding:10px 12px;font-size:14px;margin:8px 0 12px}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-top:18px}
+.tabs button{min-height:42px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:none;font:600 14px var(--sans);color:var(--mute);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--forest);border-color:var(--forest);color:#fff}
+.list{display:grid;gap:12px;margin-top:18px}
+.rev{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff;border-left:4px solid var(--acc,var(--line))}
+.rosa{--acc:var(--rose);--acc2:var(--rose2)}.moss{--acc:var(--moss);--acc2:var(--moss2)}
+.rev .h{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+.pill{display:inline-flex;padding:4px 10px;border-radius:999px;background:var(--acc2,var(--sand2));font-size:12px;font-weight:600}
+.st{color:var(--gold);letter-spacing:2px}
+.rev p{margin:10px 0;white-space:pre-line}
+.rev .meta{font-size:13px;color:var(--mute)}
+.warn{color:#8a4b12;font-size:13px;font-weight:600}
+.empty{color:var(--mute);padding:18px 0}
+.inv{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.inv:last-child{border:0}
+.inv b{font-weight:600}
+.inv small{display:block;color:var(--mute);font-size:13px}
+@media(max-width:600px){.inv{grid-template-columns:minmax(0,1fr)}}
+.notice{margin-top:18px;padding:12px 16px;border-radius:12px;background:#f6e3df;color:#7d2c20;font-size:15px}
+.ok{background:#e3eedd;color:#28421f}
+.login{max-width:420px;margin:12vh auto 0}
+.login form{display:grid;gap:14px;margin-top:24px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-sun" viewBox="0 0 40 40"><circle cx="20" cy="22" r="8" fill="#b8955a"/><g stroke="#b8955a" stroke-width="1.6" stroke-linecap="round"><path d="M20 6v5M8.7 10.7l3.5 3.5M31.3 10.7l-3.5 3.5M4 22h5M31 22h5"/></g><path d="M3 27c6-3 11-3 17 0s11 3 17 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 32c6-3 11-3 17 0s11 3 17 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".55"/></symbol>
+ <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+</svg>
+<div class="wrap" id="app"></div>
+
+<script>
+{
+const $=s=>document.querySelector(s), app=$('#app');
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const CASAS={'casa-rosa':'Casa Rosa','chale-terra-dourada':'Chalé Terra Dourada'};
+const cls=c=>c==='casa-rosa'?'rosa':'moss';
+const KEY='td_admin_pw';
+const LOGO='<a class="logo" href="/"><svg><use href="#i-sun"/></svg><span><b>Terra Dourada</b><small>Painel da equipe</small></span></a>';
+const mesAtual=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`};
+const rotuloMes=v=>{const [y,m]=(v||'').split('-').map(Number); if(!y||!m) return ''; return new Date(y,m-1,15).toLocaleDateString('pt-BR',{month:'long',year:'numeric'})};
+const dataBr=iso=>new Date(iso).toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',year:'numeric'});
+const linkDe=t=>`${location.origin}/avaliar?convite=${t}`;
+const msgDe=(nome,casa,link)=>`Olá${nome?`, ${nome}`:''}! Muito obrigada por se hospedar na ${CASAS[casa]||'Terra Dourada'}. 🌿\n\nSe puder, conte como foi sua estadia. Leva cerca de 1 minuto:\n${link}`;
+const waDe=(tel,txt)=>{const n=String(tel||'').replace(/\D/g,''); const num=n?(n.length<=11?'55'+n:n):''; return (num?`https://wa.me/${num}?text=`:'https://api.whatsapp.com/send?text=')+encodeURIComponent(txt)};
+
+let pw='', dados={avaliacoes:[],convites:[]}, aba='pendente', novo=null, aviso='', confirmar='';
+try{ pw=sessionStorage.getItem(KEY)||''; }catch(e){}
+
+async function api(method,body){
+ const r=await fetch('/api/admin',{method,headers:{'Content-Type':'application/json','x-admin-password':pw},body:body?JSON.stringify(body):undefined,cache:'no-store'});
+ return {r,j:await r.json().catch(()=>({}))};
+}
+const ERROS={senha_incorreta:'Senha incorreta.',muitas_tentativas:'Muitas tentativas erradas. Por segurança, o acesso foi bloqueado por 15 minutos.',admin_nao_configurado:'Painel não configurado: crie a variável ADMIN_PASSWORD (mínimo 10 caracteres) na Vercel e faça um novo deploy.',store_nao_configurado:'Armazenamento não configurado: conecte o Upstash Redis ao projeto na Vercel (Storage).'};
+
+async function carregar(){
+ const {r,j}=await api('GET');
+ if(r.ok&&j.ok){ dados=j; return true; }
+ return ERROS[j.code]||'Não foi possível carregar. Tente novamente.';
+}
+
+function telaLogin(erro=''){
+ app.innerHTML=`<div class="login">${LOGO}<h1>Painel de avaliações</h1><p class="mute">Acesso restrito à equipe da Terra Dourada.</p>
+ <form id="lf"><label class="f">Senha<input type="password" id="pw" autocomplete="current-password" required></label>${erro?`<div class="notice" role="alert">${esc(erro)}</div>`:''}<button class="btn" type="submit">Entrar</button></form></div>`;
+ $('#pw').focus();
+ $('#lf').onsubmit=async e=>{ e.preventDefault(); pw=$('#pw').value; const ok=await carregar(); if(ok===true){ try{sessionStorage.setItem(KEY,pw)}catch(e){} render(); } else telaLogin(ok); };
+}
+
+function render(){
+ const av=dados.avaliacoes, cont={pendente:0,aprovada:0,recusada:0}; av.forEach(a=>cont[a.status]=(cont[a.status]||0)+1);
+ const vis=av.filter(a=>a.status===aba);
+ const abertos=dados.convites.filter(c=>!c.usadoEm);
+ app.innerHTML=`
+ <div class="bar">${LOGO}<button class="btn ghost sm" id="sair" type="button">Sair</button></div>
+ <h1>Avaliações de hóspedes</h1><p class="mute">Envie o link depois do check-out. A avaliação só aparece no site depois que você aprovar.</p>
+ ${aviso?`<div class="notice ${aviso.startsWith('✓')?'ok':''}" role="status">${esc(aviso)}</div>`:''}
+
+ <section class="panel" aria-labelledby="g1">
+  <h2 id="g1">Enviar link de avaliação</h2><p class="mute">Cada link vale para uma avaliação. Gere um por hóspede.</p>
+  <form id="cf">
+   <div class="casas" role="radiogroup" aria-label="Hospedagem">${Object.entries(CASAS).map(([k,n],i)=>`<label><input type="radio" name="casa" value="${k}" ${i?'':'checked'}><span>${n}</span></label>`).join('')}</div>
+   <div class="grid">
+    <label class="f">Nome do hóspede<input name="nome" maxlength="40" placeholder="Ex.: Ana"></label>
+    <label class="f"><span>WhatsApp <span style="font-weight:400">(opcional)</span></span><input name="tel" inputmode="tel" placeholder="(61) 99999-9999"></label>
+    <label class="f">Mês da estadia<input type="month" name="mes" value="${mesAtual()}" max="${mesAtual()}"></label>
+    <button class="btn" type="submit">Gerar link</button>
+   </div>
+  </form>
+  ${novo?`<div class="out" aria-live="polite"><b>Link criado para ${esc(novo.nome||'o hóspede')} · ${esc(CASAS[novo.casa])}</b><code>${esc(linkDe(novo.token))}</code>
+   <div class="acts"><a class="btn wa" href="${esc(waDe(novo.tel,msgDe(novo.nome,novo.casa,linkDe(novo.token))))}" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enviar pelo WhatsApp</a><button class="btn ghost" type="button" data-copy="${esc(linkDe(novo.token))}">Copiar link</button><button class="btn ghost" type="button" data-copy="${esc(msgDe(novo.nome,novo.casa,linkDe(novo.token)))}">Copiar mensagem</button></div></div>`:''}
+ </section>
+
+ <section class="panel" aria-labelledby="g2">
+  <h2 id="g2">Moderação</h2>
+  <div class="tabs" role="tablist">${[['pendente','Pendentes'],['aprovada','Publicadas'],['recusada','Recusadas']].map(([k,n])=>`<button role="tab" aria-selected="${aba===k}" data-aba="${k}">${n} (${cont[k]||0})</button>`).join('')}</div>
+  <div class="list">${vis.length?vis.map(a=>`
+   <article class="rev ${cls(a.casa)}">
+    <div class="h"><div><span class="pill">${esc(CASAS[a.casa])}</span> <span class="st" aria-label="${a.nota} estrelas">${'★'.repeat(a.nota)}${'☆'.repeat(5-a.nota)}</span></div><span class="meta">Recebida em ${dataBr(a.criadoEm)}</span></div>
+    <p>${esc(a.texto)}</p>
+    <div class="meta"><b>${esc(a.nome)}</b>${a.cidade?` · ${esc(a.cidade)}`:''} · estadia em ${esc(rotuloMes(a.mes))}</div>
+    ${a.publicar?'':'<div class="warn">O hóspede não autorizou a publicação: esta avaliação não pode ir para o site.</div>'}
+    <div class="acts" style="margin-top:12px">
+     ${a.status!=='aprovada'&&a.publicar?`<button class="btn sm" data-act="aprovar" data-id="${a.id}">Publicar no site</button>`:''}
+     ${a.status!=='recusada'?`<button class="btn ghost sm" data-act="recusar" data-id="${a.id}">${a.status==='aprovada'?'Tirar do site':'Recusar'}</button>`:''}
+     ${a.status!=='pendente'?`<button class="btn ghost sm" data-act="pendente" data-id="${a.id}">Voltar para pendentes</button>`:''}
+     ${confirmar===a.id?`<button class="btn red sm" data-act="apagar" data-id="${a.id}">Confirmar exclusão</button><button class="btn ghost sm" data-cancel>Cancelar</button>`:`<button class="btn ghost sm" data-ask="${a.id}">Excluir</button>`}
+    </div>
+   </article>`).join(''):`<div class="empty">Nenhuma avaliação aqui.</div>`}</div>
+ </section>
+
+ <section class="panel" aria-labelledby="g3">
+  <h2 id="g3">Links enviados</h2><p class="mute">${abertos.length} aguardando resposta · ${dados.convites.length-abertos.length} respondidos</p>
+  <div style="margin-top:12px">${dados.convites.length?dados.convites.slice(0,40).map(c=>`
+   <div class="inv"><div><b>${esc(c.nome||'Hóspede sem nome')}</b> · ${esc(CASAS[c.casa])}<small>${c.usadoEm?`Respondido em ${dataBr(c.usadoEm)}`:`Criado em ${dataBr(c.criadoEm)} · aguardando`}${c.mes?` · estadia em ${esc(rotuloMes(c.mes))}`:''}</small></div>
+   <div class="acts">${c.usadoEm?'':`<a class="btn wa sm" href="${esc(waDe('',msgDe(c.nome,c.casa,linkDe(c.token))))}" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Reenviar</a><button class="btn ghost sm" data-copy="${esc(linkDe(c.token))}">Copiar link</button>`}<button class="btn ghost sm" data-delinv="${esc(c.token)}">Apagar</button></div></div>`).join(''):'<div class="empty">Nenhum link gerado ainda.</div>'}</div>
+ </section>`;
+}
+
+app.addEventListener('submit',async e=>{
+ if(e.target.id!=='cf') return; e.preventDefault();
+ const f=e.target, body={acao:'convite',casa:f.casa.value,nome:f.nome.value,mes:f.mes.value};
+ const {j}=await api('POST',body);
+ if(j.ok){ novo={...j.convite,tel:f.tel.value}; aviso=''; await carregar(); } else aviso=j.mensagem||ERROS[j.code]||'Não foi possível gerar o link.';
+ render();
+});
+app.addEventListener('click',async e=>{
+ const t=e.target.closest('button,a'); if(!t) return;
+ if(t.id==='sair'){ try{sessionStorage.removeItem(KEY)}catch(x){} pw=''; telaLogin(); return; }
+ if(t.dataset.aba){ aba=t.dataset.aba; confirmar=''; render(); return; }
+ if(t.dataset.copy!==undefined){ try{ await navigator.clipboard.writeText(t.dataset.copy); const o=t.textContent; t.textContent='Copiado ✓'; setTimeout(()=>t.textContent=o,1800);}catch(x){ aviso='Não foi possível copiar. Selecione o texto e copie manualmente.'; render(); } return; }
+ if(t.dataset.ask){ confirmar=t.dataset.ask; render(); return; }
+ if(t.dataset.cancel!==undefined){ confirmar=''; render(); return; }
+ if(t.dataset.act||t.dataset.delinv){
+  t.disabled=true;
+  const body=t.dataset.act?{acao:t.dataset.act,id:t.dataset.id}:{acao:'apagar_convite',token:t.dataset.delinv};
+  const {j}=await api('POST',body);
+  const okMsg={aprovar:'✓ Avaliação publicada no site.',recusar:'✓ Avaliação removida do site.',pendente:'✓ Avaliação voltou para pendentes.',apagar:'✓ Avaliação excluída.'};
+  aviso=j.ok?(okMsg[body.acao]||''):(j.mensagem||ERROS[j.code]||'Não foi possível concluir a ação.');
+  confirmar=''; await carregar(); render();
+ }
+});
+
+(async()=>{ if(!pw) return telaLogin(); const ok=await carregar(); ok===true?render():telaLogin(ok); })();
+}
+</script>
+</body>
+</html>

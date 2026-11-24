@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /avaliar
+Disallow: /api/
 
 Sitemap: https://www.terradouradabrasilia.com.br/sitemap.xml

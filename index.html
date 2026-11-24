@@ -704,7 +704,7 @@ p{margin:0}
    <div><h4>Navegação</h4><ul><li><a href="#instagram">Instagram</a></li><li><a href="#como-reservar">Como reservar</a></li><li><a href="#localizacao">Localização</a></li><li><a href="#duvidas">Dúvidas</a></li></ul></div>
    <div><h4>Contato</h4><ul><li><a class="wa-link" data-msg="geral" href="#" target="_blank" rel="noopener">WhatsApp<span id="waTxt"></span></a></li><li><a href="https://www.instagram.com/terradouradabrasilia/" target="_blank" rel="noopener" data-ig="rodape">Instagram @terradouradabrasilia</a></li><li><a href="#avaliacoes">Avaliações</a></li><li>Lago Oeste · Brasília, DF</li></ul></div>
   </div>
-  <div class="copy"><span>© <span id="yr">2026</span> Terra Dourada Brasília. Todos os direitos reservados.</span><span>Check-in 15h às 18h · Check-out até 11h</span></div>
+  <div class="copy"><span>© <span id="yr">2026</span> Terra Dourada Brasília. Todos os direitos reservados.</span><span>Check-in 15h às 18h · Check-out até 11h · <a href="/privacidade">Privacidade</a></span></div>
  </div>
 </footer>
 
@@ -988,8 +988,21 @@ const REVIEWS = {
  }
 };
 const STAR = '<svg><use href="#i-star"/></svg>';
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+/* Avaliações enviadas pelo site (aprovadas no painel /admin) */
+const SITE_REV={'casa-rosa':[],'chale-terra-dourada':[]};
+const rotuloMes=v=>{const [y,m]=String(v||'').split('-').map(Number); if(!y||!m) return ''; return new Date(y,m-1,15).toLocaleDateString('pt-BR',{month:'long',year:'numeric'})};
+let revAtual='casa-rosa';
+fetch('/api/avaliacoes',{headers:{accept:'application/json'}}).then(r=>r.json()).then(j=>{
+ if(j.status!=='ok'||!Array.isArray(j.avaliacoes)) return;
+ j.avaliacoes.forEach(a=>{ if(SITE_REV[a.casa]) SITE_REV[a.casa].push(a); });
+ renderRev(revAtual);
+}).catch(()=>{});
 function renderRev(k){
+ revAtual=k;
  const r=REVIEWS[k], c=STAYS[k].cls, num=v=>parseFloat(v.replace(',','.'));
+ const lista=SITE_REV[k].map(a=>({n:a.nome,d:[a.cidade,rotuloMes(a.mes)].filter(Boolean).join(' · '),t:a.texto,nota:Math.max(1,Math.min(5,Number(a.nota)||5)),fonte:'Enviada pelo site'}))
+  .concat(r.lista.map(([n,d,t])=>({n,d,t,nota:5,fonte:'Airbnb'})));
  $('#revBox').className=c;
  $('#revBox').innerHTML=`
   <div class="rev-top">
@@ -999,8 +1012,8 @@ function renderRev(k){
     <div class="tags" aria-label="Os hóspedes mencionam">${r.tags.map(([t,n])=>`<span>${t}<em>${n}</em></span>`).join('')}</div>
    </div>
   </div>
-  <div class="quotes" id="quotes">${r.lista.map(([n,d,t])=>`<figure class="q" style="margin:0"><div class="st" aria-label="5 estrelas">${STAR.repeat(5)}</div><blockquote style="margin:0"><p>${t}</p></blockquote><figcaption class="who"><div class="av" aria-hidden="true">${n[0]}</div><div><b>${n}</b><span>${d}</span></div></figcaption></figure>`).join('')}</div>
-  <div class="rev-foot"><span>Avaliações publicadas por hóspedes no Airbnb, reproduzidas como foram escritas. Trechos indicados com (…).</span><div class="nav3"><button class="rbtn" type="button" data-q="-1" aria-label="Avaliação anterior"><svg><use href="#i-l"/></svg></button><button class="rbtn" type="button" data-q="1" aria-label="Próxima avaliação"><svg><use href="#i-r"/></svg></button></div></div>`;
+  <div class="quotes" id="quotes">${lista.map(q=>`<figure class="q" style="margin:0"><div class="st" aria-label="${q.nota} estrelas">${STAR.repeat(q.nota)}</div><blockquote style="margin:0"><p>${esc(q.t)}</p></blockquote><figcaption class="who"><div class="av" aria-hidden="true">${esc(q.n[0])}</div><div><b>${esc(q.n)}</b><span>${esc(q.d)} · ${q.fonte}</span></div></figcaption></figure>`).join('')}</div>
+  <div class="rev-foot"><span>Avaliações de hóspedes publicadas no Airbnb e enviadas pelo nosso site, reproduzidas como foram escritas. Trechos indicados com (…).</span><div class="nav3"><button class="rbtn" type="button" data-q="-1" aria-label="Avaliação anterior"><svg><use href="#i-l"/></svg></button><button class="rbtn" type="button" data-q="1" aria-label="Próxima avaliação"><svg><use href="#i-r"/></svg></button></div></div>`;
  $$('[data-rev]').forEach(b=>b.setAttribute('aria-selected',b.dataset.rev===k));
 }
 $$('[data-rev]').forEach(b=>b.onclick=()=>renderRev(b.dataset.rev));

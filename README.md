@@ -7,6 +7,10 @@ HTML, CSS e JavaScript puros: não precisa de build nem de `npm install`.
 
 ```
 index.html                 página completa (estilos e scripts embutidos)
+admin.html                 painel da equipe (/admin): links de avaliação e moderação
+avaliar.html               formulário que o hóspede recebe (/avaliar?convite=…)
+privacidade.html           política de privacidade (/privacidade)
+api/                       funções da Vercel: disponibilidade, avaliações, convite, admin
 img/casa-rosa/             fotos da Casa Rosa (01.jpg … 10.jpg + versões -720)
 img/chale/                 fotos do Chalé (01.jpg … 07.jpg + versões -720)
 scripts/baixar-fotos.mjs   baixa as fotos dos anúncios do Airbnb para img/
@@ -84,6 +88,26 @@ Importante: reservas fechadas direto pelo WhatsApp precisam ser **bloqueadas no 
 ## Avaliações
 
 São as avaliações reais dos anúncios no Airbnb, copiadas em 24/11/2026. Para atualizar notas ou trocar depoimentos, edite `REVIEWS` no script do `index.html`.
+
+## Avaliações pelo site (painel da equipe)
+
+Funciona igual ao da Casa Mahalo:
+
+1. Depois do check-out, a equipe abre **/admin**, escolhe a casa (Casa Rosa ou Chalé), coloca o nome do hóspede e gera o link.
+2. Envia pelo botão **Enviar pelo WhatsApp**, que já abre a mensagem pronta (com o número do hóspede, se for informado).
+3. O hóspede abre **/avaliar?convite=…**, dá a nota e escreve. Cada link vale uma vez.
+4. A avaliação chega em **Pendentes** no painel. Ela só aparece no site depois de **Publicar no site**, e só se o hóspede autorizou.
+5. As publicadas aparecem na seção Avaliações da casa certa, antes das avaliações do Airbnb.
+
+### Configurar na Vercel (uma vez)
+
+1. **Storage → Create Database → Upstash (Redis)** → crie (plano gratuito) e conecte ao projeto. As variáveis `KV_REST_API_URL` e `KV_REST_API_TOKEN` são criadas sozinhas.
+2. **Settings → Environment Variables** → crie `ADMIN_PASSWORD` com uma senha forte (mínimo 10 caracteres).
+3. **Deployments → ⋯ → Redeploy.**
+
+Segurança: o painel bloqueia por 15 minutos depois de 8 senhas erradas, o envio de avaliações tem limite de tentativas e filtro anti-robô, e os textos dos hóspedes nunca são interpretados como código.
+
+Política de privacidade em **/privacidade** (o formulário pede aceite).
 
 ## Vídeos do Instagram
 
