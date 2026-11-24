@@ -354,6 +354,84 @@ p{margin:0}
 .sheet .btn{width:100%;margin-top:14px}
 .sheet .alt{display:block;text-align:center;margin-top:14px;font-size:14px;color:var(--mute)}
 
+
+/* Avaliações */
+.rev-top{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);margin-top:40px;align-items:start}
+@media(max-width:860px){.rev-top{grid-template-columns:minmax(0,1fr)}}
+.score b{font:400 clamp(72px,10vw,104px)/1 var(--serif);display:block;color:var(--forest)}
+.score .stars{color:var(--gold);display:flex;gap:3px;margin:12px 0 8px}
+.score .stars svg{width:18px;height:18px}
+.score p{color:var(--mute);font-size:15px}
+.score .fav{display:inline-flex;margin-top:14px;padding:8px 14px;border-radius:999px;background:var(--acc2);font-size:13px;font-weight:600}
+.cats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 32px}
+@media(max-width:420px){.cats{grid-template-columns:minmax(0,1fr)}}
+.cat{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;font-size:15px}
+.cat i{grid-column:1/-1;height:3px;background:var(--line);border-radius:3px;position:relative;overflow:hidden}
+.cat i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--acc)}
+.cat b{font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.tags span{padding:8px 14px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:14px}
+.tags span em{font-style:normal;color:var(--mute);margin-left:6px}
+.quotes{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:44px;padding-bottom:4px;scrollbar-width:none}
+.quotes::-webkit-scrollbar{display:none}
+.q{flex:0 0 min(400px,86%);scroll-snap-align:start;background:var(--paper);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:16px;border-top:3px solid var(--acc)}
+.q .st{color:var(--gold);display:flex;gap:2px}.q .st svg{width:15px;height:15px}
+.q p{font-size:16px;line-height:1.62}
+.q .who{margin-top:auto;display:flex;align-items:center;gap:12px;font-size:14px}
+.q .who .av{width:42px;height:42px;flex:none;border-radius:50%;background:var(--acc2);display:grid;place-items:center;font:400 19px/1 var(--serif)}
+.q .who b{display:block}.q .who span{color:var(--mute)}
+.rev-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:16px;font-size:13px;color:var(--mute)}
+.rev-foot .nav3{display:flex;gap:8px}
+.rev-foot .rbtn{border:1px solid var(--line)}
+
+/* Instagram */
+.ig{background:var(--paper)}
+.ig-head{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-end;justify-content:space-between}
+.btn.ig-btn{--bg:linear-gradient(120deg,#6b4f3a,#b07d72 55%,#b8955a);--fg:#fff;background:var(--bg)}
+.reels{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:40px;scrollbar-width:none;padding-bottom:4px}
+.reels::-webkit-scrollbar{display:none}
+.reel{flex:0 0 min(270px,64%);aspect-ratio:9/16;border-radius:var(--r);overflow:hidden;position:relative;scroll-snap-align:start;background:#1d2418;color:#fff;text-decoration:none}
+.reel video,.reel>.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 25%,transparent 65%,rgba(0,0,0,.55));pointer-events:none}
+.reel .lbl{position:absolute;z-index:2;left:14px;right:14px;bottom:14px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}
+.reel .lbl svg{width:18px;height:18px;flex:none}
+.reel .snd{position:absolute;z-index:3;right:10px;top:10px}
+.reel.cta{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:16px;padding:26px;background:linear-gradient(160deg,var(--forest),#1d2418)}
+.reel.cta::after{display:none}
+.reel.cta b{font:400 30px/1.1 var(--serif)}
+.reel.cta span{font-size:15px;color:rgba(255,255,255,.78)}
+.nav .ig-ico{display:grid;place-items:center;width:40px;height:40px;padding:0;border-radius:50%;border:1px solid currentColor;opacity:.9}
+.nav .ig-ico::after{display:none}
+.nav .ig-ico svg{width:18px;height:18px}
+@media(max-width:960px){.nav .ig-ico{width:auto;height:auto;border:0;border-bottom:1px solid var(--line);border-radius:0;display:flex;gap:10px;justify-content:flex-start;padding:14px 0}.nav .ig-ico span{display:inline}}
+.nav .ig-ico span{display:none}
+
+/* Calendário */
+.picked{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.pk{border:1px solid var(--line);border-radius:12px;background:#fff;padding:10px 14px}
+.pk small{display:block;font-size:12px;font-weight:600;color:var(--mute)}
+.pk b{font-size:15px;font-weight:600}
+.pk.on{border-color:var(--forest);box-shadow:0 0 0 3px rgba(79,90,58,.12)}
+.cal{margin-top:10px;border:1px solid var(--line);border-radius:14px;background:#fff;padding:12px}
+.cal-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.cal-h b{font-weight:600}
+.cal-h button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:none;cursor:pointer;display:grid;place-items:center;color:var(--ink)}
+.cal-h button:disabled{opacity:.3;cursor:default}
+.cal-h button svg{width:16px;height:16px}
+.cal-g{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px;text-align:center}
+.cal-g .dw{font-size:12px;color:var(--mute);padding:4px 0}
+.cal-g button{height:42px;border:0;background:none;border-radius:10px;font:500 15px var(--sans);color:var(--ink);cursor:pointer;padding:0}
+.cal-g button:disabled{color:#c9bfae;cursor:default}
+.cal-g button.busy{text-decoration:line-through;color:#b3a892;background:repeating-linear-gradient(135deg,transparent 0 5px,rgba(107,79,58,.07) 5px 7px)}
+.cal-g button.in-r{background:var(--moss2);border-radius:0}
+.cal-g button.sel{background:var(--forest);color:#fff;text-decoration:none}
+.cal-g button:not(:disabled):not(.sel):hover{background:var(--sand2)}
+.cal-g button.today:not(.sel){box-shadow:inset 0 0 0 1px var(--gold)}
+.cal-leg{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:12px;color:var(--mute)}
+.cal-leg i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.cal-st{font-size:13px;color:var(--mute);margin-top:8px;display:flex;gap:8px;align-items:center}
+.cal-st::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c,#c9bfae);flex:none}
+
 /* Revelar ao rolar */
 .rv{opacity:0;transform:translateY(34px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
 .rv.in{opacity:1;transform:none}
@@ -374,6 +452,9 @@ p{margin:0}
  <symbol id="i-r" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></symbol>
  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></symbol>
  <symbol id="i-sun" viewBox="0 0 40 40"><circle cx="20" cy="22" r="8" fill="#b8955a"/><g stroke="#b8955a" stroke-width="1.6" stroke-linecap="round"><path d="M20 6v5M8.7 10.7l3.5 3.5M31.3 10.7l-3.5 3.5M4 22h5M31 22h5"/></g><path d="M3 27c6-3 11-3 17 0s11 3 17 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 32c6-3 11-3 17 0s11 3 17 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".55"/></symbol>
+ <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></symbol>
+ <symbol id="i-vol" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 9v6h4l5 4V5L8 9zM16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></symbol>
+ <symbol id="i-mute" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 9v6h4l5 4V5L8 9zM17 9l5 6M22 9l-5 6"/></symbol>
  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></symbol>
  <symbol id="i-pause" viewBox="0 0 24 24"><path fill="currentColor" d="M7 5h4v14H7zM13 5h4v14h-4z"/></symbol>
 </svg>
@@ -386,8 +467,9 @@ p{margin:0}
    <a href="#experiencia">Experiência</a>
    <a href="#galeria">Galeria</a>
    <a href="#como-reservar">Como reservar</a>
-   <a href="#localizacao">Localização</a>
+   <a href="#avaliacoes">Avaliações</a>
    <a href="#duvidas">Dúvidas</a>
+   <a class="ig-ico" href="https://www.instagram.com/terradouradabrasilia/" target="_blank" rel="noopener" aria-label="Instagram da Terra Dourada" data-ig="menu"><svg><use href="#i-ig"/></svg><span>Instagram</span></a>
    <button class="btn gold sm" type="button" data-book>Consultar datas</button>
   </nav>
   <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
@@ -470,6 +552,18 @@ p{margin:0}
  </div>
 </section>
 
+
+<!-- INSTAGRAM -->
+<section class="band ig" id="instagram">
+ <div class="wrap">
+  <div class="ig-head">
+   <div><div class="kick rv">No Instagram</div><h2 class="rv">A chácara em movimento.</h2><p class="lead rv">Acompanhe o dia a dia da chácara e as novidades da Casa Rosa e do Chalé.</p></div>
+   <a class="btn ig-btn rv" href="https://www.instagram.com/terradouradabrasilia/" target="_blank" rel="noopener" data-ig="secao"><svg><use href="#i-ig"/></svg>Seguir no Instagram</a>
+  </div>
+  <div class="reels" id="reels"></div>
+ </div>
+</section>
+
 <!-- 4. RESERVA DIRETA -->
 <section class="band" id="reserva-direta">
  <div class="wrap direct">
@@ -503,6 +597,21 @@ p{margin:0}
    </div>
   </div>
   <div class="masonry" id="masonry" role="tabpanel"></div>
+ </div>
+</section>
+
+
+<!-- AVALIAÇÕES -->
+<section class="band" id="avaliacoes">
+ <div class="wrap">
+  <div class="gal-head">
+   <div><div class="kick rv">Avaliações</div><h2 class="rv">Quem ficou, quer voltar.</h2></div>
+   <div class="tabs rv" role="tablist" aria-label="Avaliações por hospedagem">
+    <button role="tab" aria-selected="true" data-rev="casa-rosa">Casa Rosa</button>
+    <button role="tab" aria-selected="false" data-rev="chale-terra-dourada">Chalé Terra Dourada</button>
+   </div>
+  </div>
+  <div id="revBox" role="tabpanel"></div>
  </div>
 </section>
 
@@ -592,8 +701,8 @@ p{margin:0}
     <p style="max-width:38ch">Casa Rosa e Chalé Terra Dourada: duas hospedagens em uma chácara de mata nativa preservada, a cerca de 30 minutos de Brasília.</p>
    </div>
    <div><h4>Hospedagens</h4><ul><li><a href="#casa-rosa">Casa Rosa</a></li><li><a href="#chale-terra-dourada">Chalé Terra Dourada</a></li><li><a href="#galeria">Galeria</a></li></ul></div>
-   <div><h4>Navegação</h4><ul><li><a href="#como-reservar">Como reservar</a></li><li><a href="#localizacao">Localização</a></li><li><a href="#duvidas">Dúvidas</a></li></ul></div>
-   <div><h4>Contato</h4><ul><li><a class="wa-link" data-msg="geral" href="#" target="_blank" rel="noopener">WhatsApp<span id="waTxt"></span></a></li><li><a href="https://www.instagram.com/terradouradabrasilia/" target="_blank" rel="noopener">Instagram @terradouradabrasilia</a></li><li>Lago Oeste · Brasília, DF</li></ul></div>
+   <div><h4>Navegação</h4><ul><li><a href="#instagram">Instagram</a></li><li><a href="#como-reservar">Como reservar</a></li><li><a href="#localizacao">Localização</a></li><li><a href="#duvidas">Dúvidas</a></li></ul></div>
+   <div><h4>Contato</h4><ul><li><a class="wa-link" data-msg="geral" href="#" target="_blank" rel="noopener">WhatsApp<span id="waTxt"></span></a></li><li><a href="https://www.instagram.com/terradouradabrasilia/" target="_blank" rel="noopener" data-ig="rodape">Instagram @terradouradabrasilia</a></li><li><a href="#avaliacoes">Avaliações</a></li><li>Lago Oeste · Brasília, DF</li></ul></div>
   </div>
   <div class="copy"><span>© <span id="yr">2026</span> Terra Dourada Brasília. Todos os direitos reservados.</span><span>Check-in 15h às 18h · Check-out até 11h</span></div>
  </div>
@@ -631,9 +740,10 @@ p{margin:0}
     <label><input type="radio" name="casa" value="chale-terra-dourada"><span>Chalé<small>até 7</small></span></label>
    </div>
   </fieldset>
+  <div class="picked"><div class="pk" id="pkIn"><small>Entrada</small><b id="pIn">Escolha no calendário</b></div><div class="pk" id="pkOut"><small>Saída</small><b id="pOut">—</b></div></div>
+  <div class="cal" id="cal" aria-label="Calendário de disponibilidade"></div>
+  <div class="cal-st" id="calSt"></div>
   <div class="fields">
-   <div class="field"><label for="dIn">Entrada</label><input type="date" id="dIn" required></div>
-   <div class="field"><label for="dOut">Saída</label><input type="date" id="dOut" required></div>
    <div class="field full"><label id="gL">Hóspedes</label><div class="stepper" role="group" aria-labelledby="gL"><button type="button" id="gMinus" aria-label="Menos um hóspede">−</button><output id="gOut" aria-live="polite">2</output><button type="button" id="gPlus" aria-label="Mais um hóspede">+</button></div></div>
   </div>
   <div class="summary" id="sum"></div>
@@ -650,7 +760,10 @@ const CFG = {
   whatsapp: '',            // número com DDI+DDD, só dígitos. Ex.: '5561999999999'. Vazio = o visitante escolhe o contato.
   ga4: '',                 // ex.: 'G-XXXXXXXXXX'
   metaPixel: '',           // ex.: '123456789012345'
-  video: ''                // opcional: URL de um vídeo .mp4 real das hospedagens (substitui o passeio em fotos)
+  video: '',               // opcional: URL de um vídeo .mp4 real das hospedagens (substitui o passeio em fotos)
+  disponibilidade: '/api/disponibilidade', // lê o calendário do Airbnb (configure ICAL_CASA_ROSA e ICAL_CHALE na Vercel)
+  reels: [                 // vídeos do Instagram (9:16). Ex.: {src:'video/reel-1.mp4', poster:'video/reel-1.jpg', casa:'casa-rosa', titulo:'Pôr do sol na Casa Rosa'}
+  ]
 };
 /* ============================================================ */
 
@@ -666,7 +779,7 @@ const STAYS = {
  'casa-rosa': {
   nome:'Casa Rosa', cls:'rosa', cap:12, kick:'Sobrado de 300 m² com vista para o vale',
   emo:'Um sobrado amplo, construído com princípios sustentáveis, para reunir quem você ama diante do pôr do sol e de um céu estrelado.',
-  nota:'4,95', notaTxt:'Preferido dos hóspedes no Airbnb',
+  nota:'4,95', notaTxt:'97 avaliações no Airbnb',
   fatos:[['12','hóspedes'],['4','quartos'],['7','camas'],['4','banheiros']],
   dest:['Piscina natural, sem produtos químicos','Cozinha gourmet envidraçada, de frente para o vale','Quarto com paredes de vidro e vista para o vale','Wi‑Fi rápido, Smart TV e duas salas de estar'],
   mais:['Churrasqueira móvel e fogareiro','Espreguiçadeiras e redes','Máquina de lavar, ferro e ventilador de teto','Vaga acessível na entrada'],
@@ -688,10 +801,11 @@ const STAYS = {
  }
 };
 
+
 /* FAQ — itens marcados [CONFIRMAR] dependem de resposta da proprietária */
 const FAQ = [
  ['Como funciona a reserva direta?','<p>Você escolhe a hospedagem, envia suas datas pelo WhatsApp e recebe da equipe os valores, as formas de pagamento e as informações da estadia. Com tudo combinado, a reserva é confirmada diretamente com a Terra Dourada.</p>'],
- ['Como consultar a disponibilidade?','<p>Toque em <b>Consultar disponibilidade</b>, escolha a casa, as datas e o número de hóspedes. A mensagem já chega pronta no WhatsApp; é só enviar.</p>'],
+ ['Como consultar a disponibilidade?','<p>Toque em <b>Consultar disponibilidade</b>, escolha a casa e as datas no calendário (os dias já reservados aparecem riscados) e o número de hóspedes. A mensagem chega pronta no WhatsApp; é só enviar.</p>'],
  ['Quais são as formas de pagamento?','<p>As formas e condições de pagamento são informadas pela equipe no atendimento, junto com o valor da sua estadia.</p>'], // [CONFIRMAR] listar formas aceitas (Pix, cartão, parcelamento, sinal)
  ['Qual é a capacidade de hóspedes?','<p><b>Casa Rosa:</b> até 12 hóspedes, em 4 quartos, 7 camas e 4 banheiros.</p><p><b>Chalé Terra Dourada:</b> até 7 hóspedes, em 2 quartos, 5 camas (incluindo sofá-cama) e 2 banheiros.</p>'],
  ['Quais são os horários de check-in e check-out?','<p>Check-in das <b>15h às 18h</b> e check-out <b>até as 11h</b>, nas duas hospedagens.</p>'],
@@ -844,53 +958,162 @@ if(CFG.video){
  new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting){clearTimeout(timer)} else if(playing){show(cur)} })).observe($('#stage'));
 }
 
+/* Avaliações reais dos anúncios no Airbnb (copiadas em 24/11/2026). Para atualizar, edite aqui. */
+const REVIEWS = {
+ 'casa-rosa': {
+  nota:'4,95', total:97, fav:'Preferido dos hóspedes',
+  cats:[['Limpeza','4,9'],['Exatidão do anúncio','4,9'],['Check-in','4,9'],['Comunicação','4,9'],['Localização','4,9'],['Custo-benefício','4,8']],
+  tags:[['Hospitalidade',45],['Vista',35],['Limpeza',30],['Conforto',27],['Localização',27],['Piscina',23],['Família',22],['Cozinha',19]],
+  lista:[
+   ['Rafael','novembro de 2026','Aline se mostrou atenciosa e pronta a todo instante. A casa faz você se sentir na chácara de algum tio, muita privacidade e aconchego. A vista da piscina fazia me sentir na chapada! A proximidade da cidade deu a segurança para meus pais idosos.'],
+   ['Daphne','outubro de 2026','A casa é muito bonita, a vista é deslumbrante, as fotos correspondem à realidade. Camas super confortáveis, tudo muito limpo, cozinha super bem equipada, piscina natural sensacional! (…) Dias maravilhosos!'],
+   ['Mariana','setembro de 2026','A estadia foi perfeita! O local é lindo, tranquilo e cercado de natureza. A Aline foi muito atenciosa desde o instante da reserva até a nossa saída. Não poderíamos ter passado um final de semana entre amigas em um lugar melhor. Recomendo muito!'],
+   ['Luana','outubro de 2025','Percebe-se que tudo na casa foi feito com muito carinho, e com a intenção de proporcionar uma estadia aconchegante, e de boas memórias! (…) Com certeza, voltaremos a nos hospedar na Casa Rosa.'],
+   ['Humberto','maio de 2023','A experiência de dormir no quarto de vidro, imerso na natureza foi sensacional. O grande diferencial da casa é o conjunto de área gourmet com a piscina. O ambiente é lindo e a vista maravilhosa.'],
+   ['Lucas','agosto de 2023','Ficamos absolutamente encantados com essa joia escondida no cerrado. (…) Um espaço pensado para desfrutar o melhor da natureza com conforto!']
+  ]
+ },
+ 'chale-terra-dourada': {
+  nota:'4,93', total:76, fav:'',
+  cats:[['Limpeza','4,9'],['Exatidão do anúncio','4,9'],['Check-in','4,9'],['Comunicação','5,0'],['Localização','4,9'],['Custo-benefício','4,7']],
+  tags:[['Hospitalidade',33],['Piscina',30],['Limpeza',24],['Localização',23],['Conforto',13],['Espaço ao ar livre',12],['Cozinha',11],['Vista',11]],
+  lista:[
+   ['Rizza','junho de 2026','Chalé muito completo, todo equipado, tem casa próxima, mas não interfere na privacidade, os caseiros são super solícitos e discretos, a piscina natural privativa é uma sensação maravilhosa, a visão da serra é linda, o contato com a natureza, mesmo estando pertinho de Brasília.'],
+   ['Regina Coeli','abril de 2026','A casa é linda, muito confortável e bem cuidada, cercada de muito verde. A piscina natural e privativa é o grande destaque do local, ideal para quem quer descansar.'],
+   ['Евгения','outubro de 2025','Já é a segunda vez que ficamos no chalé. É um lugar incrível no meio da natureza e um ótimo lugar para quem gosta de observar aves. O chalé é bem equipado, limpo e aconchegante.'],
+   ['Fabricio','agosto de 2025','Espaço muito bonito e bem cuidado. Limpeza excelente! (…) A piscina natural é muito bonita e tem um deck muito agradável. Eu e minha esposa gostamos muito!'],
+   ['Catharina','julho de 2024','A casa é simplesmente maravilhosa: espaçosa, bem equipada e muito arejada. (…) A piscina natural é um espetáculo à parte.'],
+   ['Guilherme','julho de 2023','No geral a experiência foi muito acima da média. Caseiro até preparou lenha para nossa fogueira e aqui fica dica para levarem marshmallow ;D']
+  ]
+ }
+};
+const STAR = '<svg><use href="#i-star"/></svg>';
+function renderRev(k){
+ const r=REVIEWS[k], c=STAYS[k].cls, num=v=>parseFloat(v.replace(',','.'));
+ $('#revBox').className=c;
+ $('#revBox').innerHTML=`
+  <div class="rev-top">
+   <div class="score"><b>${r.nota}</b><div class="stars" aria-hidden="true">${STAR.repeat(5)}</div><p>Média de ${r.total} avaliações de hóspedes no Airbnb · ${STAYS[k].nome}</p>${r.fav?`<span class="fav">${r.fav}</span>`:''}</div>
+   <div>
+    <div class="cats">${r.cats.map(([n,v])=>`<div class="cat"><span>${n}</span><b>${v}</b><i style="--w:${num(v)/5*100}%"></i></div>`).join('')}</div>
+    <div class="tags" aria-label="Os hóspedes mencionam">${r.tags.map(([t,n])=>`<span>${t}<em>${n}</em></span>`).join('')}</div>
+   </div>
+  </div>
+  <div class="quotes" id="quotes">${r.lista.map(([n,d,t])=>`<figure class="q" style="margin:0"><div class="st" aria-label="5 estrelas">${STAR.repeat(5)}</div><blockquote style="margin:0"><p>${t}</p></blockquote><figcaption class="who"><div class="av" aria-hidden="true">${n[0]}</div><div><b>${n}</b><span>${d}</span></div></figcaption></figure>`).join('')}</div>
+  <div class="rev-foot"><span>Avaliações publicadas por hóspedes no Airbnb, reproduzidas como foram escritas. Trechos indicados com (…).</span><div class="nav3"><button class="rbtn" type="button" data-q="-1" aria-label="Avaliação anterior"><svg><use href="#i-l"/></svg></button><button class="rbtn" type="button" data-q="1" aria-label="Próxima avaliação"><svg><use href="#i-r"/></svg></button></div></div>`;
+ $$('[data-rev]').forEach(b=>b.setAttribute('aria-selected',b.dataset.rev===k));
+}
+$$('[data-rev]').forEach(b=>b.onclick=()=>renderRev(b.dataset.rev));
+$('#revBox').addEventListener('click',e=>{const b=e.target.closest('[data-q]'); if(!b) return; const q=$('#quotes'), w=q.firstElementChild.offsetWidth+16; q.scrollBy({left:w*+b.dataset.q,behavior:'smooth'});});
+renderRev('casa-rosa');
+
+/* ---------- Instagram: reels ou chamada ---------- */
+{
+ const igUrl='https://www.instagram.com/terradouradabrasilia/';
+ const cta=`<a class="reel cta" href="${igUrl}" target="_blank" rel="noopener" data-ig="cartao"><svg style="width:34px;height:34px"><use href="#i-ig"/></svg><b>@terradouradabrasilia</b><span>Vídeos, novidades e o dia a dia da chácara.</span><span class="btn light sm" style="pointer-events:none">Abrir o Instagram</span></a>`;
+ if(CFG.reels.length){
+  $('#reels').innerHTML=CFG.reels.map((r,i)=>`<div class="reel ${STAYS[r.casa]?.cls||''}"><video src="${r.src}" ${r.poster?`poster="${r.poster}"`:''} muted loop playsinline preload="none" aria-label="${r.titulo||'Vídeo da Terra Dourada'}"></video><button class="rbtn snd" type="button" aria-label="Ativar som"><svg><use href="#i-mute"/></svg></button><div class="lbl"><svg><use href="#i-ig"/></svg>${r.titulo||(STAYS[r.casa]?.nome||'Terra Dourada')}</div></div>`).join('')+cta;
+  const vids=$$('#reels video');
+  const vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target; if(e.isIntersecting&&!still.matches){v.preload='auto';v.play().catch(()=>{})} else v.pause();}),{threshold:.6});
+  vids.forEach(v=>vio.observe(v));
+  $('#reels').addEventListener('click',e=>{const b=e.target.closest('.snd'); if(!b) return; const v=b.parentElement.querySelector('video'); v.muted=!v.muted; if(!v.muted){vids.forEach(o=>{if(o!==v){o.muted=true;o.parentElement.querySelector('.snd').innerHTML='<svg><use href="#i-mute"/></svg>'}}); v.play().catch(()=>{});} b.innerHTML=`<svg><use href="#i-${v.muted?'mute':'vol'}"/></svg>`; b.setAttribute('aria-label',v.muted?'Ativar som':'Desativar som');});
+ } else {
+  const picks=[['casa-rosa',1,'Casa Rosa'],['chale-terra-dourada',3,'Chalé Terra Dourada'],['casa-rosa',3,'Casa Rosa']];
+  $('#reels').innerHTML=picks.map(([k,i,t])=>{const s=STAYS[k],f=s.fotos[i];return `<a class="reel" href="${igUrl}" target="_blank" rel="noopener" data-ig="cartao">${ph(f,s.cls)}<div class="lbl"><svg><use href="#i-ig"/></svg>${t}</div></a>`}).join('')+cta;
+ }
+}
+
 /* ---------- FAQ ---------- */
 $('#faq').innerHTML=FAQ.map(([q,a],i)=>`<details class="rv"${i?'':' open'}><summary>${q}<i aria-hidden="true"></i></summary><div class="ans">${a}</div></details>`).join('');
 
-/* ---------- Consulta de disponibilidade ---------- */
-const form=$('#bookForm'), dIn=$('#dIn'), dOut=$('#dOut'), gOut=$('#gOut'), send=$('#send');
-let guests=2;
-const iso=d=>new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);
-const today=new Date(); today.setHours(0,0,0,0);
-dIn.min=iso(today);
-const br=s=>s.split('-').reverse().join('/');
+/* ---------- Consulta de disponibilidade + calendário ---------- */
+const form=$('#bookForm'), gOut=$('#gOut'), send=$('#send');
+let guests=2, ci=null, co=null;
+const pad=n=>String(n).padStart(2,'0');
+const key=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const parse=t=>{const [y,m,d]=t.split('-').map(Number);return new Date(y,m-1,d)};
+const addD=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+const today=new Date(); today.setHours(0,0,0,0); const TODAY=key(today);
+const br=t=>t.split('-').reverse().join('/');
 const casaSel=()=>form.casa.value, capOf=k=>STAYS[k].cap;
-function noites(){ if(!dIn.value||!dOut.value) return 0; return Math.round((new Date(dOut.value)-new Date(dIn.value))/864e5); }
+const BUSY={}, CALST={};
+let view=new Date(today.getFullYear(),today.getMonth(),1);
+const maxView=new Date(today.getFullYear(),today.getMonth()+12,1);
+async function loadBusy(k){
+ if(BUSY[k]) return; BUSY[k]=new Set(); CALST[k]='carregando'; renderCal();
+ try{
+  if(!CFG.disponibilidade) throw 0;
+  const r=await fetch(`${CFG.disponibilidade}?casa=${encodeURIComponent(k)}`,{headers:{accept:'application/json'}});
+  const j=await r.json();
+  if(!j.ok||!Array.isArray(j.ocupado)) throw 0;
+  for(const [a,b] of j.ocupado){ if(!/^\d{4}-\d{2}-\d{2}$/.test(a)||!/^\d{4}-\d{2}-\d{2}$/.test(b)) continue; for(let d=parse(a); key(d)<b; d=addD(d,1)) BUSY[k].add(key(d)); }
+  CALST[k]='ok';
+ }catch(e){ CALST[k]='off'; }
+ if(casaSel()===k){ if(ci&&!livre(ci,co||key(addD(parse(ci),1)))){ci=null;co=null} upd(); }
+}
+const ocupado=t=>BUSY[casaSel()]?.has(t);
+function livre(a,b){ for(let d=parse(a); key(d)<b; d=addD(d,1)) if(ocupado(key(d))) return false; return true; }
+const podeEntrar=t=>t>=TODAY&&!ocupado(t);
+function renderCal(){
+ const k=casaSel(), y=view.getFullYear(), m=view.getMonth(), first=new Date(y,m,1).getDay(), dias=new Date(y,m+1,0).getDate();
+ const nome=(t=>t[0].toUpperCase()+t.slice(1))(view.toLocaleDateString('pt-BR',{month:'long',year:'numeric'}));
+ let h=`<div class="cal-h"><button type="button" data-cm="-1" aria-label="Mês anterior" ${view<=new Date(today.getFullYear(),today.getMonth(),1)?'disabled':''}><svg><use href="#i-l"/></svg></button><b aria-live="polite">${nome}</b><button type="button" data-cm="1" aria-label="Próximo mês" ${view>=maxView?'disabled':''}><svg><use href="#i-r"/></svg></button></div><div class="cal-g">`;
+ h+=['D','S','T','Q','Q','S','S'].map(d=>`<span class="dw" aria-hidden="true">${d}</span>`).join('')+'<span></span>'.repeat(first);
+ for(let d=1; d<=dias; d++){
+  const t=`${y}-${pad(m+1)}-${pad(d)}`, busy=ocupado(t);
+  const escolhendoSaida=ci&&!co;
+  const ok = escolhendoSaida ? ((t>ci&&livre(ci,t))||podeEntrar(t)) : podeEntrar(t);
+  const cls=[busy?'busy':'', t===TODAY?'today':'', (t===ci||t===co)?'sel':'', (ci&&co&&t>ci&&t<co)?'in-r':''].join(' ');
+  h+=`<button type="button" class="${cls}" data-d="${t}" ${ok?'':'disabled'} aria-label="${d} ${nome}${busy?', reservado':''}" aria-pressed="${t===ci||t===co}">${d}</button>`;
+ }
+ $('#cal').innerHTML=h+'</div><div class="cal-leg"><span><i style="background:var(--forest)"></i>Sua escolha</span><span><i style="background:repeating-linear-gradient(135deg,#eee 0 3px,#d8cdb9 3px 5px)"></i>Já reservado</span></div>';
+ const st=CALST[k];
+ $('#calSt').textContent = st==='ok' ? 'Disponibilidade sincronizada com o calendário do Airbnb.' : st==='carregando' ? 'Consultando datas disponíveis…' : 'A disponibilidade final é confirmada pela equipe no WhatsApp.';
+ $('#calSt').style.setProperty('--c', st==='ok'?'#3d8b5a':st==='carregando'?'var(--gold)':'#c9bfae');
+}
+$('#cal').addEventListener('click',e=>{
+ const cm=e.target.closest('[data-cm]'); if(cm){ view=new Date(view.getFullYear(),view.getMonth()+ +cm.dataset.cm,1); renderCal(); return; }
+ const b=e.target.closest('[data-d]'); if(!b||b.disabled) return; const t=b.dataset.d;
+ if(ci&&!co&&t>ci&&livre(ci,t)) co=t; else { ci=t; co=null; }
+ upd();
+});
+function noites(){ return ci&&co ? Math.round((parse(co)-parse(ci))/864e5) : 0; }
 function problema(){
- if(!dIn.value) return 'Escolha a data de entrada.';
- if(new Date(dIn.value+'T00:00')<today) return 'A entrada precisa ser a partir de hoje.';
- if(!dOut.value) return 'Escolha a data de saída.';
- if(noites()<1) return 'A saída precisa ser depois da entrada.';
+ if(!ci) return 'Escolha a data de entrada no calendário.';
+ if(!co) return 'Agora escolha a data de saída.';
  return '';
 }
 function msgReserva(){
- const k=casaSel(), n=noites();
- return `Olá! Conheci a Terra Dourada pelo site e gostaria de consultar a disponibilidade ${nomeDe(k)}.\n\n• Entrada: ${br(dIn.value)}\n• Saída: ${br(dOut.value)} (${n} ${n>1?'noites':'noite'})\n• Hóspedes: ${guests}`;
+ const n=noites();
+ return `Olá! Conheci a Terra Dourada pelo site e gostaria de consultar a disponibilidade ${nomeDe(casaSel())}.\n\n• Entrada: ${br(ci)}\n• Saída: ${br(co)} (${n} ${n>1?'noites':'noite'})\n• Hóspedes: ${guests}`;
 }
 function upd(){
- const cap=capOf(casaSel()); if(guests>cap) guests=cap;
+ const k=casaSel(), cap=capOf(k); if(guests>cap) guests=cap;
  gOut.textContent=guests; $('#gMinus').disabled=guests<=1; $('#gPlus').disabled=guests>=cap;
- if(dIn.value){ const m=new Date(dIn.value+'T00:00'); m.setDate(m.getDate()+1); dOut.min=iso(m); }
+ $('#pIn').textContent=ci?br(ci):'Escolha no calendário'; $('#pOut').textContent=co?br(co):(ci?'Escolha a saída':'—');
+ $('#pkIn').classList.toggle('on',!ci); $('#pkOut').classList.toggle('on',!!ci&&!co);
  const n=noites();
- $('#sum').textContent = n>0 ? `${nomeDe(casaSel()).replace(/^d[ao] /,'')} · ${n} ${n>1?'noites':'noite'} · ${guests} ${guests>1?'hóspedes':'hóspede'} (máx. ${cap})` : `Capacidade: até ${cap} hóspedes`;
+ $('#sum').textContent = n>0 ? `${STAYS[k].nome} · ${n} ${n>1?'noites':'noite'} · ${guests} ${guests>1?'hóspedes':'hóspede'} (máx. ${cap})` : `Capacidade: até ${cap} hóspedes`;
  send.href = problema() ? '#' : wa(msgReserva());
- $('#sendNoDate').href = wa(MSG[casaSel()]);
+ $('#sendNoDate').href = wa(MSG[k]);
  $('#err').textContent='';
+ renderCal();
 }
 $('#gMinus').onclick=()=>{guests--;upd()}; $('#gPlus').onclick=()=>{guests++;upd()};
-form.addEventListener('input',upd); form.addEventListener('change',e=>{ if(e.target===dIn && dOut.value && noites()<1) dOut.value=''; upd(); });
+form.addEventListener('change',e=>{ if(e.target.name==='casa'){ ci=null; co=null; loadBusy(casaSel()); upd(); } });
 form.addEventListener('submit',e=>e.preventDefault());
-send.addEventListener('click',e=>{ const p=problema(); if(p){ e.preventDefault(); $('#err').textContent=p; (dIn.value?dOut:dIn).focus(); return; } track('whatsapp_click',{origem:'consulta',hospedagem:casaSel(),hospedes:guests,noites:noites()}); });
+send.addEventListener('click',e=>{ const p=problema(); if(p){ e.preventDefault(); $('#err').textContent=p; return; } track('whatsapp_click',{origem:'consulta',hospedagem:casaSel(),hospedes:guests,noites:noites()}); });
 $('#sendNoDate').addEventListener('click',()=>track('whatsapp_click',{origem:'consulta_sem_data',hospedagem:casaSel()}));
 function openBook(k){
  const v=(k&&STAYS[k])?k:null;
- if(v) form.querySelector(`input[value="${v}"]`).checked=true;
- closeSheet($('#det')); upd(); openSheet($('#book'));
+ if(v&&v!==casaSel()){ form.querySelector(`input[value="${v}"]`).checked=true; ci=null; co=null; }
+ closeSheet($('#det')); loadBusy(casaSel()); upd(); openSheet($('#book'));
  track('abrir_consulta',{hospedagem:v||'nao_definida'});
 }
 
 /* ---------- Delegação de cliques ---------- */
 document.addEventListener('click',e=>{
+ const ig=e.target.closest('[data-ig]'); if(ig) track('instagram_click',{origem:ig.dataset.ig});
  const b=e.target.closest('[data-book]'); if(b){ e.preventDefault(); closeMenu(); openBook(b.dataset.book); return; }
  const d=e.target.closest('[data-det]'); if(d){ openDet(d.dataset.det); return; }
  const g=e.target.closest('[data-gal-open]'); if(g){ openLb(g.dataset.galOpen,0); return; }

@@ -63,6 +63,40 @@ const CFG = {
 
 Quando o domínio for definido, troque `www.terradouradabrasilia.com.br` em `index.html` (canonical e og:image), `robots.txt` e `sitemap.xml`.
 
+## Calendário sincronizado com o Airbnb
+
+A consulta de disponibilidade mostra um calendário. Os dias já reservados no Airbnb aparecem riscados e não podem ser escolhidos.
+Quem faz isso é a função `api/disponibilidade.js`, que roda na própria Vercel e lê o calendário de cada anúncio.
+
+Para ativar:
+
+1. No Airbnb (conta da anfitriã): **Anúncios → escolha o anúncio → Calendário → Disponibilidade → Sincronizar calendários → Exportar calendário**. Copie o link (termina em `.ics`).
+2. Faça isso para os dois anúncios.
+3. Na Vercel: **Project → Settings → Environment Variables** e crie:
+   - `ICAL_CASA_ROSA` = link da Casa Rosa
+   - `ICAL_CHALE` = link do Chalé
+4. Vá em **Deployments → ⋯ → Redeploy** para aplicar.
+
+O calendário atualiza a cada 10 minutos. Enquanto as variáveis não forem criadas, o calendário funciona normalmente, sem dias riscados, com o aviso de que a equipe confirma a disponibilidade no WhatsApp.
+
+Importante: reservas fechadas direto pelo WhatsApp precisam ser **bloqueadas no calendário do Airbnb**, para não aparecerem livres no site nem serem vendidas duas vezes.
+
+## Avaliações
+
+São as avaliações reais dos anúncios no Airbnb, copiadas em 24/11/2026. Para atualizar notas ou trocar depoimentos, edite `REVIEWS` no script do `index.html`.
+
+## Vídeos do Instagram
+
+1. Salve os vídeos (Reels) em `video/` com nomes simples: `reel-1.mp4`, `reel-2.mp4`…
+2. No `CFG` do `index.html`, preencha `reels`:
+   ```js
+   reels: [
+     { src: 'video/reel-1.mp4', poster: 'video/reel-1.jpg', casa: 'casa-rosa', titulo: 'Pôr do sol na Casa Rosa' },
+     { src: 'video/reel-2.mp4', poster: 'video/reel-2.jpg', casa: 'chale-terra-dourada', titulo: 'Manhã no Chalé' }
+   ]
+   ```
+Sem vídeos configurados, a seção mostra fotos com link para o Instagram.
+
 ## Pendências com a proprietária
 
 Os itens marcados com `[CONFIRMAR]` no FAQ do `index.html`:
