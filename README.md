@@ -21,7 +21,7 @@ Na pasta do projeto, com Node 18 ou mais novo:
 node scripts/baixar-fotos.mjs
 ```
 
-O script cria `img/casa-rosa/` e `img/chale/` com 34 arquivos (17 fotos em dois tamanhos) e mostra `34 arquivos prontos, 0 falhas` no final.
+O script cria `img/casa-rosa/` e `img/chale/` com 35 arquivos (17 fotos em dois tamanhos + a foto da abertura em alta resolução) e mostra `35 arquivos prontos, 0 falhas` no final.
 Se alguma foto faltar, o site usa automaticamente a mesma foto direto do Airbnb, então nada quebra.
 
 Para trocar por fotos originais em melhor qualidade, basta substituir os arquivos mantendo os mesmos nomes.

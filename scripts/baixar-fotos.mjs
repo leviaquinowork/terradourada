@@ -65,5 +65,15 @@ for (const [pasta, urls] of Object.entries(FOTOS)) {
     }
   }
 }
+// Foto da abertura em resolução máxima, para telas grandes
+try {
+  const st = await baixar(FOTOS['casa-rosa'][0], join(raiz, 'img', 'casa-rosa', '01-full.jpg'));
+  console.log(`✓ img/casa-rosa/01-full.jpg (${st})`);
+  ok++;
+} catch (e) {
+  console.error(`✗ img/casa-rosa/01-full.jpg — ${e.message}`);
+  falhas++;
+}
+
 console.log(`\n${ok} arquivos prontos, ${falhas} falhas.`);
 if (falhas) process.exitCode = 1;
